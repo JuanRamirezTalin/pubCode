@@ -1,0 +1,47 @@
+[
+	{
+	   "id": 1,
+      "name": "Microservice-Module Manager Application",
+      "file": "adm",
+      "type": "MICROSERVICE",
+      "active": true,
+      "date": "16-Ago-2022",
+	  "dateUsers":"16-Ago-2022",
+	  "dateRoles":"22-Jul-2022",
+	  "dateMenu":"16-Jul-2022",
+	  "dateSetting":"29-Jun-2022",
+	  "dateAuth":"09-Jun-2022"
+	}
+,	{
+	   "id": 5000,
+      "name": "Microservice-Module Rh-Person Application",
+      "file": "app/rh",
+      "type": "MICROSERVICE",
+      "active": true,
+      "date": "06-Sep-2022"
+   }   
+,  {
+      "id": 8999,
+      "name": "Microservice-About",
+      "file": "about.microservice",
+      "type": "MICROSERVICE",
+      "active": true,
+      "date": "09-Jun-2022"
+   }
+,  {
+      "id": 9998,
+      "name": "Test Route",
+      "file": "_si/apiTest",
+      "type": "ROUTER",
+      "active": true,
+      "date": "01-Ene-2022"
+   }
+,  {
+      "id": 9999,
+      "name": "Error Route",
+      "file": "_si/apiError",
+      "type": "ROUTER",
+      "active": true,
+      "date": "01-Ene-2022"
+   }
+]

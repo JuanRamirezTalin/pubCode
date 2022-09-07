@@ -1,0 +1,32 @@
+[
+   {
+      "id"        : "1",
+      "name"      : "Microservice's server",
+      "company"   : "NAME_COMPANY",
+      "copyright" : "JRT@2022",
+      "version"   : "1.0.0",
+      "encrypted" : "false",
+      "dateImpl"  : "",
+      "dateUpdate": "",
+      "dateExpire": "",
+      "appDir"    : "src",
+      "system"    : {
+         "servicePort"  : NUMBER_PORT,
+         "secretKeyApi" : "NUMBER_SECRET_KEY_API",
+         "resave": false,
+         "saveUninitialized": true,
+         "expiresIn" : 86400,
+         "tokenExpiresIn": 86400
+      },
+      "dataBase":{
+       "port": "NUMBER_PORT",
+       "host": "localhost",
+       "user": "USER_DATABASE",
+       "password": "PASSWORD",
+       "database": "NAME_DATABASE"
+      },
+      "network" : {
+         "serverOrigin": [ "http://localhost:4200", "http://localhost:8080" ]
+      }
+   }
+]
