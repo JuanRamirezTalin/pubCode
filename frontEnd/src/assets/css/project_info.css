@@ -1,0 +1,45 @@
+/* ----------------------------------------------------------------------------
+  Purpose: style for application-information (use in: Swal)
+  --------------------- -------------------------------------------------------
+  20220818 v_01.00 JRT: Create
+  -----------------------------------------------------------------------------
+*/
+/*** Swal ***/
+.swalDiv{ width: 100% !important; background-color: var(--COLOR_BASE_15) !important;}
+.swalDiv table{ 
+   width: 100% !important; 
+   color:var(--COLOR_FONT) !important;
+   border-bottom: 1px solid var(--COLOR_BASE_00) !important;
+}
+.swalDiv table th{ width: 25%; text-align:right;}
+.swalDiv table td{text-align:left}
+
+/*** user.service***/
+.infoDiv{ 
+  width: 100%; background-color: var(--COLOR_BASE);
+  padding: 3px 3px; font-size: 14px; color: var(--COLOR_FONT);
+  -webkit-border-radius: 0px 0px 8px 13px / 0px 0px 3px 8px !important;
+      -moz-border-radius: 0px 0px 8px 13px / 0px 0px 3px 8px !important;
+           border-radius: 0px 0px 8px 13px / 0px 0px 3px 8px !important;
+}
+
+.infoDiv table
+.infoDiv .infoTable,
+.infoDiv .infoTable2,
+.infoDiv .infoTable3{ width: 100%;}
+
+.infoDiv .infoTable .img{ width: 89px; border: 1px solid gray; text-align: center;}
+.infoDiv .infoTable .img img{ width: 89px; height: 94px;}
+.infoDiv table th,
+.infoDiv .infoTable th{ text-align: right; padding: 3px 3px;}
+.infoDiv .infoTable th{ width: 69px; }
+
+.infoDiv table td,
+.infoDiv .infoTable td{text-align:left;}
+
+.infoDiv .infoTable2 th,
+.infoDiv .infoTable2 td{ border: 1px solid black; text-align: center; }
+.infoDiv .infoTable2 th{ background-color: var(--COLOR_BASE_03);}
+
+.infoDiv .infoTable3 th{ text-align: center;}
+.infoDiv .infoTable3 td{ width: 50%; text-align: left;}

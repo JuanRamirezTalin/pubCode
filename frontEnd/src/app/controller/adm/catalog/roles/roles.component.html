@@ -1,0 +1,104 @@
+<div class="card">
+  <!-- MENU -->
+  <csh-btnmenu 
+    [data]= service.BtnMenu
+
+    (btnRefresh)= "onBtnMnuRefresh()"
+    (btnDelete) = "service.doDeleteForm()"
+    (btnRepDataHlp)="service.doActionRDH($event)"
+  ></csh-btnmenu>
+
+  <div class="card-header d-flex"> | </div>
+  <h6>{{title}}</h6>
+  <div class="card-body">
+    <!-- SEARCH -->
+    <div class="collapse SEARCHcontainer" id="collapseSearch">
+      <div class="filterSearchs SEARCHFiltercontainer">
+        <form autocomplete="off">
+          <label id="lclave" for="lclave">Clave:</label>
+          <input id="clave" type="text" maxlength="13">
+          <label id="ldescripcion" for="ldescripcion">Descripción:</label>
+          <input id="descripcion" type="text"size="50" maxlength="50">
+
+          <label id="lstatus" for="lstatus">Status:</label>
+          <select id="status">
+            <option>Todos</option>
+            <option>Activo</option>
+            <option>Inactivo</option>
+          </select>        
+        </form>
+
+        <div class="filterSearchBtns d-flex justify-content-end">
+          <button class="btn btnColor2 select"
+                  (click)="onSearchApply()">Aplicar</button>
+          <button class="btn btnColor2 select"
+                  (click)="onSearchClean()">limpiar</button>
+        </div>
+      </div>
+    </div>
+
+    <!--BROWSE DATA-->
+    <table class="table table-hover table-bordered" border="2">
+      <thead>
+        <tr>
+           <th id="idThSec" class="sortTable selecth" (click)="onTableSort(0)">ID</th>
+           <th id="idThCod" class="sortTable selecth" (click)="onTableSort(1)">CLAVE</th>
+           <th id="idThDes" class="sortTable selecth" (click)="onTableSort(2)">DESCRIPCION</th>
+           <th id="id">PERMISO</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let row of service.Browse">
+          <td scope="row">
+            <div class="form-check">
+              <input class="form-check-input rowChBox" type="checkbox"
+                     (change)="onTableRow(row.ROL_ID,$event.target)">
+              <label class="form-check-label" for="id">
+                {{row.ROL_ID | number}}
+              </label>
+            </div>
+
+          </td>
+          <td>{{row.ROL_CVE}}</td>
+          <td>{{row.DESCRIPTION}}</td>
+          <td>{{row.ROL_PERM}}</td>
+        </tr>
+      </tbody>
+      <div class="refresh233" style="top:55px;left: 55px;" *ngIf="service.ImgRefresh"></div>
+    </table>
+
+    <!-- PAGINATION -->
+    <div class="pagination d-flex">
+      <csh-pagination class="d-flex"
+          [currentPage]= "service.PageCurrent"
+          [pageItems]  = "service.PageItems"
+          [totalItems] = "service.TotalItems"
+          [totalPage]  = "service.PageTotal"
+
+          (currentPage)= "onUpdatePageCurrent($event)"
+          (pageItems)  = "onUpdatePageItems($event)"
+          ></csh-pagination>
+    </div>
+
+  </div>
+</div>
+
+<!--FORMULARY-->
+<adm-roles-form
+    [data] = service.FormData
+    (btnClose)= "onFormClose()"
+></adm-roles-form>
+
+<style>
+  .card .card-header{ 
+    width: 100% !important; 
+    border: none !important;
+    border-bottom: 1px solid var(--COLOR_SOMBRA_25) !important;}
+  .card .card-header csh-btnmenu{ width: 100%;}
+
+  @media only screen and (max-width: 648px) {
+    .card{ position:relative; top: 50px; }
+  }
+
+</style>

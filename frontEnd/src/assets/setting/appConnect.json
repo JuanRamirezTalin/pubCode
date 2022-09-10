@@ -1,0 +1,12 @@
+[
+  {
+    "id":"connect_3300",
+    "url":"http://localhost",
+    "port":3300,
+    "token":"",
+    "urlHeader":{
+      "Content-Type":"application/json",
+      "idtkApi":"UltraSecreta012358*"
+    }
+  }
+]

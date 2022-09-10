@@ -1,0 +1,144 @@
+<!-- Modal -->
+<div class="modal fade" 
+     id="modalNew" 
+     data-bs-backdrop="static" 
+     data-bs-keyboard="false" 
+     tabindex="-1" 
+     aria-labelledby="modalNewLabel" 
+     aria-hidden="true">
+
+  <div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+    <header>
+      <div class="col-12">
+        <div class='containerLogo'></div>
+        <h5>{{alabelTitle}}</h5>
+        <button type="button"
+                id="modaROLClose" 
+                class="btn-close select" 
+                data-bs-dismiss="modal" 
+                data-ToolTipTitle="Cerrar"
+                (click)="onClose()">
+        </button>
+      </div>
+    </header>
+    </div>
+
+    <form autocomplete="off" 
+          [formGroup]="service.formGrp"
+    ><!-- Formulary-->
+    <div class="modal-body modal-body-form">
+
+      <div class="modal-body-form-content"><!--01-->
+        <div class="d-flex">
+          <div class="form-floating">
+            <input type="text" class="form-control" formControlName="id"
+                   id="id" name="id" 
+                   placeholder="." maxlength="3" [value]="aformDat.ROL_ID">
+            <label for="id"><i class="bi-person-badge"></i>Id</label>
+          </div>
+          <div class="form-floating">
+            <input type="text" class="form-control" formControlName="c1"
+                   id="c1" name="c1" (change)="onChange('c1',$event.target)"
+                   placeholder="." maxlength="13" [(ngModel)]="aformDat.ROL_CVE"
+                   title="Logitud de 13 caracteres, REQUERIDO">
+            <label for="c1">Código</label>
+          </div>
+        </div>
+
+        <div class="form-floating">
+          <input type="text" class="form-control" formControlName="c2"
+                 id="c2" name="c2" (change)="onChange('c2',$event.target)"
+                 placeholder="." maxlength="50" [(ngModel)]="aformDat.DESCRIPTION"
+                 title="Logitud de 50 caracteres, REQUERIDO">
+          <label for="c2">Descripción</label>
+        </div>
+        
+        <p>Privilegíos:</p>
+
+        <div class="w-100 d-flex"><!--02 -->
+          <div class="zw-50">
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" role="switch" 
+                     id="c3" name="c3" (change)="onChange('c3', $event.target)"
+                     [checked]="aformDat.CHK_CREATER" >
+              <label class="form-check-label" for="flexSwitchCheckChecked">Crear Registro</label>
+            </div>
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" role="switch" 
+                     id="c4" name="c4" (change)="onChange('c4', $event.target)"
+                     [checked]="aformDat.CHK_REPORT">
+              <label class="form-check-label" for="flexSwitchCheckChecked">Reportes</label>
+            </div>
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" role="switch" 
+                     id="c5" name="c5" (change)="onChange('c5', $event.target)"
+                     [checked]="aformDat.CHK_UPDATE">
+              <label class="form-check-label" for="flexSwitchCheckChecked">Actualiza</label>
+            </div>
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" role="switch"
+                     id="c6" name="c6" (change)="onChange('c6', $event.target)"
+                     [checked]="aformDat.CHK_DELETE">
+              <label class="form-check-label" for="flexSwitchCheckChecked">Eliminar</label>
+            </div>
+          </div>
+          <div class="zw-50">
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" role="switch" 
+                     id="c7" name="c7" (change)="onChange('c7', $event.target)"
+                     [checked]="aformDat.CHK_DATA">
+              <label class="form-check-label" for="flexSwitchCheckChecked">Datos (Importar/Exportar)</label>
+            </div>
+            
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" role="switch"
+                     id="c8" name="c8" (change)="onChange('c8', $event.target)"
+                     [checked]="aformDat.CHK_UPLOAD">
+              <label class="form-check-label" for="flexSwitchCheckChecked">Subir Archivo</label>
+            </div>
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" role="switch" id="c9" name="c9" disabled>
+              <label class="form-check-label" for="flexSwitchCheckChecked"></label>
+            </div>
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" role="switch" id="c10" name="c10" disabled>
+              <label class="form-check-label" for="flexSwitchCheckChecked"></label>
+            </div>
+          </div>
+        </div><!--02-->
+
+        <div class="form-check form-switch zw-100 d-flex justify-content-end">
+          <input class="form-check-input" type="checkbox" role="switch" 
+                 id="c11" name="c11" (change)="onChange('c11',$event.target)" 
+                 [checked]="isActive(aformDat.ACTIVE_YN)"
+                 title="Status de la cuenta">
+          <label class="form-check-label" for="flexSwitchCheckChecked">Activo</label>
+        </div>
+
+      </div><!--01-->
+    </div>
+    <style>
+      .form-floating #id{ width: 4em; }
+      .form-floating #c1{ width:10em; margin-left: 5px;}
+      .modal-body-form-content p{ width: 100%; font-weight: bold; text-align: center;}
+    </style>
+
+    <div class="modal-footer">
+      <div class="refresh233" style="top:55px;left: 55px;" *ngIf="service.isRefresh"></div>
+      <div id="form-message" class="message" *ngIf="service.resultDB.length > 0">
+        <!--mensaje de validacion...-->
+        <p>{{service.resultDB}}</p>        
+      </div>
+
+      <button type="button" class="btn btnColor select"
+              (click)="onSend()"
+              [disabled]="!service.formGrp.valid">
+        <i class="bi-send"></i> . . .
+      </button>
+    </div>
+    </form><!-- Formulary-->
+  </div>
+  </div>
+</div>

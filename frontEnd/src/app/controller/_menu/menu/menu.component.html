@@ -1,0 +1,70 @@
+<div class="offcanvas offcanvas-end" 
+    tabindex="-1" id="offcanvasRight"
+    aria-labelledby="offcanvasRightLabel">
+    <div class="offcanvas-header">
+        <!------------------------------->
+        <div class="dropdown">
+            <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 dropdown-toggle textColor"
+            id="Btnprofile"
+            data-bs-toggle="collapse" 
+            data-bs-target="#dashboard-collapse2"
+            aria-expanded="false">
+                <img id="avatarImg2" src="" alt="" width="32" height="32" class="rounded-circle me-2">
+            </button>
+
+            <ul class="dropdown-menu dropdown-menu-dark text-small shadow"
+                id="dashboard-collapse2" 
+                aria-labelledby="dropdownUser1">
+              <li><a class="dropdown-item selectn" (click)="onSetting()"><i class="bi-file-person"></i>  {{aMnuPerfilSetting}}</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item selectn" href="/" (click)="onLogout()"><i class="bi-door-open"></i> {{aMnuExit}}</a></li>
+            </ul>
+        </div>    
+        <!------------------------------->
+        <h5 class="offcanvas-title" 
+            id="offcanvasRightLabel">{{aMnuTitle}}</h5>
+
+        <button type="button" 
+                id="canvasClose"
+                class="btn-close select" 
+                data-bs-dismiss="offcanvas" 
+                aria-label="Close"
+                data-ToolTipTitle="Cerrar"></button>
+    </div>
+
+    <div class="offcanvas-body">
+      <ul class="list-unstyled ps-0" *ngIf="aMnuModule.length >0">
+      <!------- -------------------->
+      <li class="mb-1" *ngFor="let itemModule of aMnuModule; index as nModule">
+        <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 dropdown-toggle textColor menuOption select" 
+          data-bs-toggle="collapse" 
+          [attr.data-bs-target]="'#'+itemModule.ID_REF_DOM"                
+          aria-expanded="false">
+          <img *ngIf="itemModule.ICON !== ''"
+               src='{{aMnuDirImg}}{{itemModule.ICON}}.png'>      
+          {{itemModule.DESCRIPTION}}
+        </button>
+
+        <div class="collapse subMnuOption" *ngIf="itemModule.OPTION.length > 0"
+                id="{{itemModule.ID_REF_DOM}}">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small" *ngFor="let itemOption of itemModule.OPTION; index as nOption">
+            <li><a class="link-dark d-inline-flex text-decoration-none rounded selectn"
+                   (click)="onSelectOption( nModule,nOption)">
+              <img *ngIf="itemOption.ICON !== ''"
+                   src='{{aMnuDirImg}}{{itemOption.ICON}}.png'>
+              {{itemOption.DESCRIPTION}}
+            </a></li>
+          </ul>
+        </div>
+    </li>
+      <!------- -------------------->
+      </ul>
+    </div>
+</div>
+
+<style>
+.offcanvas .offcanvas-body .mb-1 button{ height: 89px !important;}
+.offcanvas .offcanvas-body .mb-1 button img{ width: 55px !important; height: 55px !important;} 
+.offcanvas .offcanvas-body .mb-1 .collapse img{ width: 34px !important; height: 34px !important;} 
+.offcanvas .offcanvas-body .mb-1 .collapse a{ cursor: pointer;}
+</style>

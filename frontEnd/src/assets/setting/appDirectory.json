@@ -1,0 +1,26 @@
+[
+  {
+  "id":"avatar",
+  "directory":"assets/image/avatar",
+  "service_url":"http://localhost",
+  "service_port":"3300",
+	"privilege":"read,write",
+	"feature":""
+  },
+  {
+  "id":"menu",
+  "directory":"assets/image/icon/w",
+  "service_url":"http://localhost",
+  "service_port":"3300",
+	"privilege":"read",
+	"feature":""
+  },
+  {
+  "id":"template",
+  "directory":"",
+  "service_url":"",
+  "service_port":"",
+	"privilege":"",
+	"feature":"green"
+  }
+]
