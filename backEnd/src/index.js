@@ -32,7 +32,7 @@ newApi.getApplication()
                      .get( 'port' ), 
                      () =>
 {
-    console.log( ' Service FrontEnd : ', 
+    console.log( ' Service BackEnd : ', 
                  newApi.getApplication().get( 'port' ) 
                );
 });
