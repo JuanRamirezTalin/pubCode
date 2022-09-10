@@ -1,0 +1,12 @@
+/* ----------------------------------------------------------------------------
+  Purpose : style for application CONALEP
+  --------------------- -------------------------------------------------------
+  20220606: v_01.00 JRT: Create
+  -----------------------------------------------------------------------------
+*/
+/*** ContainerLogo ***/
+header .containerLogo .logo{ background-image: url('./logo/logo.png'); }
+header .col-12 .containerLogo{ background-image: url('./logo/modaLogo.png');}
+
+/*** ContainerContent ***/
+.containerContent{ background-image: url('./portal/f001.png'); }

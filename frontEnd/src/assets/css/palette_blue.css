@@ -1,0 +1,87 @@
+/* ----------------------------------------------------------------------------
+  Purpose: color´s setting for application
+  --------------------- -------------------------------------------------------
+  20220602 v_01.00 JRT: Create
+  -----------------------------------------------------------------------------
+*/
+:root{
+   --COLOR_BASE:   rgb(3, 52, 124);
+   --COLOR_BASE_75:rgb(3, 52, 124,0.75);
+   --COLOR_BASE_65:rgb(3, 52, 124,0.65);
+   --COLOR_BASE_50:rgb(3, 52, 124,0.5);
+   --COLOR_BASE_25:rgb(3, 52, 124,0.25);
+   --COLOR_BASE_15:rgb(3, 52, 124,0.15);
+   --COLOR_BASE_08:rgb(3, 52, 124,0.08);
+   --COLOR_BASE_05:rgb(3, 52, 124,0.05);
+   --COLOR_BASE_03:rgb(3, 52, 124,0.03);
+   --COLOR_BASE_00: white;
+
+   --COLOR_BASEN_00:rgba(0, 0, 0, 1);
+   --COLOR_BASEN_75:rgba(0, 0, 0, 0.75);
+   --COLOR_BASEN_65:rgba(0, 0, 0, 0.65);
+   --COLOR_BASEN_50:rgba(0, 0, 0, 0.50);
+   --COLOR_BASEN_25:rgba(0, 0, 0, 0.25);         
+   --COLOR_BASEN_15:rgba(0, 0, 0, 0.15);
+   --COLOR_BASEN_08:rgba(0, 0, 0, 0.08);
+   --COLOR_BASEN_05:rgba(0, 0, 0, 0.05);
+   --COLOR_BASEN_03:rgba(0, 0, 0, 0.03);
+  
+   --COLOR_SOMBRA:    rgba(0, 0, 0, 1);
+   --COLOR_SOMBRA_60: rgba(0, 0, 0, 0.60);
+   --COLOR_SOMBRA_50: rgba(0, 0, 0, 0.50);
+   --COLOR_SOMBRA_25: rgba(0, 0, 0, 0.25);
+   --COLOR_SOMBRA_13: rgba(0, 0, 0, 0.13);
+   --COLOR_SOMBRA_08: rgba(0, 0, 0, 0.08);
+   --COLOR_SOMBRA_05: rgba(0, 0, 0, 0.05);
+   --COLOR_SOMBRA_00: white;
+
+   --COLOR_BORDER:   rgba(87, 85, 85,1);
+   --COLOR_BORDER_75:rgba(87, 85, 85,.75);
+   --COLOR_BORDER_65:rgba(87, 85, 85,.65);
+   --COLOR_BORDER_50:rgba(87, 85, 85,.5);
+   --COLOR_BORDER_25:rgba(87, 85, 85,.25);
+   --COLOR_BORDER_15:rgba(87, 85, 85,.15);
+   --COLOR_BORDER_13:rgba(87, 85, 85,.13);
+   --COLOR_BORDER_08:rgba(87, 85, 85,.08);
+   --COLOR_BORDER_05:rgba(87, 85, 85,.05);
+   --COLOR_BORDER_03:rgba(87, 85, 85,.03);
+   --COLOR_BORDER_00:white
+
+   --COLOR_TRANSPARENTE:rgba(255, 255, 255, 0.3);
+
+   --COLOR_BORDER_BASE: white;
+
+   --COLOR_FONT: rgba(255, 255, 255, 0.966);
+   --COLOR_FONT_00: rgb(0, 0, 0);
+   --COLOR_FONT_01: rgb(10, 10, 141);
+   --COLOR_FONT_02: rgb(122, 3, 3);
+   --COLOR_FONT_10: rgb(4, 52, 124);
+   --COLOR_FONT_ERROR: RED;
+   --COLOR_FONT_WARNING:rgb(248, 248, 11);
+   --COLOR_FONT_SUCCESS:rgb(2, 102, 2);
+
+   --COLOR_ERROR: rgb(253, 3, 3);
+   --COLOR_SUCCESS: rgb(23, 205, 10);
+   --COLOR_WARNING: rgb(248, 248, 11);
+
+   --NAV_HEADER_HEIGHT:9.39vh;
+   --LOGO_CONTAINER_WIDTH:300px;
+   --CONTAINER_FOOTER_HEIGHT:21vh;
+
+   --PADDING_LEFT: 5px;
+   --PADDING_RIGHT:5px;
+   --NONE:0 0 0 0;
+}
+
+/*** refresh ***/
+.refresh233{ width: 233px; height: 233px; }
+.refresh144{ width: 144px; height: 144px; }
+.refresh89 { width: 89px ; height: 89px; }
+.refresh55 { width: 55px ; height: 55px; }
+
+.refresh55, .refresh89, .refresh144,
+.refresh233{
+  position: absolute; top: 0px; left: 0px;
+  background-image: url('../image/color/blue/refresh.gif'); 
+  background-size: 100% 100%;
+ }
